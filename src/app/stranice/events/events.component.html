@@ -1,0 +1,29 @@
+<div class="container-flex d-flex justify-content-between mb-3">
+    <h4 class="title">Događaji:</h4>
+    <div class="d-flex align-items-center">
+        <form class="d-flex me-2" role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <button class="btn btn-success">Napravi događaj</button>
+    </div>
+</div>
+
+<div class="container mt-2 mb-2">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let event of events">
+            <div class="eventbox mt-3 mb-3">
+                <h1>{{event.name}} <i class="bi bi-arrow-down-square" (click)="event.showDetails = !event.showDetails"></i></h1>
+                <p>{{event.description}}</p>
+                <p>Broj sudionika: {{event.maxParticipants}}</p>
+                <p *ngIf="event.showDetails">Prijave od: {{ event.registrationsNotBefore | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotBefore | date:'HH:mm' }}</p>
+                <p *ngIf="event.showDetails">Prijave do: {{event.registrationsNotAfter | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotAfter | date:'HH:mm' }}h</p>
+                <p *ngIf="event.showDetails">Rezultati prijave: {{event.confirmationNotAfter | date:'dd.MM.yyyy' }}. u {{ event.confirmationNotAfter | date:'HH:mm' }}h</p>
+                <p >Početak: {{event.startDate | date:'dd.MM.yyyy' }}. u {{ event.startDate | date:'HH:mm'}}h</p>
+                <p>Trajanje u tjednima: {{event.weeks}}</p>
+                <a class="saznajButton"><i class="bi bi-info-square"></i> Saznaj više</a> 
+            </div>
+        </div>
+    </div> 
+</div>
+  

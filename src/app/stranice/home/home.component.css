@@ -1,0 +1,37 @@
+.banner{
+    background-image: url('../../../assets/img/banner.img');
+    height: 600px;
+    background-position: center ;
+    background-size: cover;
+}
+.content{
+    top: 25%;
+    left: 15%;
+    position: absolute;
+}
+.content h1{
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
+.content a{
+    text-decoration: none;
+    background-color: green;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.content a:hover{
+    background-color: rgb(186, 159, 61);
+}
+.stepBox{
+    background-color: green;
+    padding: 10px 10px;
+}
+.stepBox h1{
+    color: rgb(188, 159, 16);
+    font-weight: bold;
+}
+.stepBox p{
+    color: black;
+}

@@ -1,0 +1,21 @@
+a {
+    color: #040404;
+    font-weight: bold;
+}
+.nav-link{
+    color: black;
+}
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #198742;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: box-shadow .15s ease-in-out;
+}
+.navbar-nav .nav-link.active-link
+{
+    color: green;
+    font-weight: bold;
+}

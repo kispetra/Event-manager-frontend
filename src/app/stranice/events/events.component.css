@@ -1,0 +1,38 @@
+.eventbox {
+    padding: 15px 15px;
+   
+    background-color: rgb(140, 197, 120);
+}
+
+.eventbox h1 {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(0, 112, 0);
+}
+.eventbox i{
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+}
+.saznajButton{
+    text-decoration: none;
+    background-color: green;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+.saznajButton i{
+    font-size: 11px;
+    color: black;
+}
+
+.btn btn-primary{
+    color: black;
+}
+.title {
+    margin-left: 15px;
+}
+
