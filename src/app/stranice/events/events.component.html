@@ -1,29 +1,71 @@
-<div class="container-flex d-flex justify-content-between mb-3">
-    <h4 class="title">Događaji:</h4>
+<ng-container *ngIf="(eventState$ | async) as state" [ngSwitch]="state.appState">
+<div class="container-flex d-flex justify-content-between mt-3 mb-3">
+    <h4 class="title">Napravi događaji:</h4>
     <div class="d-flex align-items-center">
-        <form class="d-flex me-2" role="search">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <form #searchForm="ngForm" (ngSubmit)="goToPage(searchForm.value.name)" class="d-flex me-2" role="search">
+            <input type="search" name="name" ngModel class="form-control me-2" placeholder="Upišite naziv događaja" aria-label="Search">
+            <button class="btn btn-success" type="submit">Pretraži</button>
+          </form>
         <button class="btn btn-success">Napravi događaj</button>
     </div>
 </div>
 
 <div class="container mt-2 mb-2">
     <div class="row">
-        <div class="col-lg-4" *ngFor="let event of events">
+        <ng-container *ngSwitchCase="'APP_ERROR'"> <span>greška!</span> </ng-container>
+        <ng-container *ngSwitchCase="'APP_LOADING'"> 
+            <div class="d-flex justify-content-center mt-4">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>    
+        </ng-container>
+        <ng-container *ngSwitchCase="'APP_LOADED'"> 
+        <div class="col-lg-4" *ngFor="let event of state.appData.data.page.content; let i=index;">
             <div class="eventbox mt-3 mb-3">
                 <h1>{{event.name}} <i class="bi bi-arrow-down-square" (click)="event.showDetails = !event.showDetails"></i></h1>
                 <p>{{event.description}}</p>
                 <p>Broj sudionika: {{event.maxParticipants}}</p>
-                <p *ngIf="event.showDetails">Prijave od: {{ event.registrationsNotBefore | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotBefore | date:'HH:mm' }}</p>
+                <p *ngIf="event.showDetails">Prijave od: {{ event.registrationsNotBefore | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotBefore | date:'HH:mm' }}h</p>
                 <p *ngIf="event.showDetails">Prijave do: {{event.registrationsNotAfter | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotAfter | date:'HH:mm' }}h</p>
                 <p *ngIf="event.showDetails">Rezultati prijave: {{event.confirmationNotAfter | date:'dd.MM.yyyy' }}. u {{ event.confirmationNotAfter | date:'HH:mm' }}h</p>
                 <p >Početak: {{event.startDate | date:'dd.MM.yyyy' }}. u {{ event.startDate | date:'HH:mm'}}h</p>
                 <p>Trajanje u tjednima: {{event.weeks}}</p>
-                <a class="saznajButton"><i class="bi bi-info-square"></i> Saznaj više</a> 
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="saznajButton" [routerLink]="['/events/', event.eventId]"><i class="bi bi-info-square"></i> Saznaj više</button> 
+                </div>
             </div>
         </div>
+        <div *ngIf="state.appData.data.page.content.length < 1" class="alert alert-secondary" role="alert">
+            No users found
+        </div>
+        <nav *ngIf="state.appData.data.page.content.length > 0" aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <!-- Previous Page -->
+                <li class="page-item pointer" [ngClass]="{'disabled': 0 == (currentPage$ | async)}">
+                    <a (click)="goToNextOrPreviousPage('backward', searchForm.value.name)" class="page-link" aria-label="Previous" [style.color]="(0 == (currentPage$ | async)) ? 'white' : 'green'">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+        
+                <!-- Page Numbers -->
+                <li *ngFor="let pageNumber of [].constructor(state.appData.data.page.totalPages); let i = index;"
+                    class="page-item pointer" [ngClass]="{'active': i == (currentPage$ | async), 'disabled': i == (currentPage$ | async)}">
+                    <a (click)="goToPage(searchForm.value.name, i)" class="page-link" [style.color]="(i == (currentPage$ | async)) ? 'white' : 'green'">
+                        {{ i + 1 }}
+                    </a>
+                </li>
+        
+                <!-- Next Page -->
+                <li class="page-item pointer" [ngClass]="{'disabled': (state.appData.data.page.totalPages - 1) == (currentPage$ | async)}">
+                    <a (click)="goToNextOrPreviousPage('forward', searchForm.value.name)" class="page-link" aria-label="Next" [style.color]="((state.appData.data.page.totalPages - 1) == (currentPage$ | async)) ? 'white' : 'green'">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        </ng-container>
     </div> 
 </div>
-  
+</ng-container> 

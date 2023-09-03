@@ -17,22 +17,39 @@
     padding: 5px;
 }
 .saznajButton{
-    text-decoration: none;
-    background-color: green;
-    color: black;
-    padding: 10px 15px;
+    padding: 8px 16px;
+    background-color: #d0b661;
+    color: #000000;
+    border: none;
     border-radius: 20px;
-    font-size: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
-.saznajButton i{
-    font-size: 11px;
-    color: black;
-}
+
+.saznajButton:hover {
+    background-color: #1e5e0f;
+  }
+
 
 .btn btn-primary{
     color: black;
 }
 .title {
+    color: rgb(128, 106, 27);
+    font-size: 22px;
     margin-left: 15px;
+    font-weight: bold;
 }
+/* For active page */
+.pagination .page-item.active .page-link {
+    background-color: green; 
+    color: white;
+    border-color: green;
+}
+
+.pagination .page-item.disabled .page-link {
+    pointer-events: none;
+    color: green; 
+}
+
 

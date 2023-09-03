@@ -6,20 +6,20 @@ import { tap, catchError } from 'rxjs/operators';
 import { RegistrationRequestDto } from '../../dtos/RegistrationRequestDto';
 import { CommentRequestDto } from '../../dtos/CommentRequestDto';
 import { ConfirmationRequestDto } from '../../dtos/ConfirmationRequestDto';
+import { Registration } from '../interface/registration';
 @Injectable({ providedIn: 'root' })
 export class RegistrationService {
 
-    private readonly apiUrl='any';
+    private readonly apiUrl='http://localhost:8080';
+  
     constructor(private http: HttpClient) {
       
     }
 
-    saveRegistration$= (eventId: number, registrationRequestDto: RegistrationRequestDto) => <Observable<Object>>
-    this.http.post<Object>(`${this.apiUrl}/event/${eventId}/registrations`, registrationRequestDto)
-   .pipe(
-     tap(console.log),
-     catchError(this.handleError)
-   );
+    
+   saveRegistration(eventId: number, registration: Registration): Observable<Object>{
+    return this.http.post(`${this.apiUrl}/event/${eventId}/registrations`, registration);
+   }
 
     deleteRegistration$= (eventId: number, registrationId: number) => <Observable<Object>>
     this.http.delete<Object>(`${this.apiUrl}/event/${eventId}/registrations/${registrationId}`)
