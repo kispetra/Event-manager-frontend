@@ -1,0 +1,125 @@
+.event-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-title {
+    color: green;
+    margin-top: 0;
+  }
+  
+  .event-info {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .event-info p {
+    margin: 8px 0;
+  }
+  
+  .event-info strong {
+    font-weight: bold;
+  }
+  
+  .event-details:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .back-button {
+    
+    padding: 8px 16px;
+    background-color: #d0b661;
+    color: #2a7e1a;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .back-button:hover {
+    background-color: #5e2a0f;
+  }
+  .container {
+    background-color: rgb(188, 169, 100);
+    margin: auto;
+    max-width: 1200px; /* Set a maximum width for the container */
+    padding: 40px;
+  }
+  
+  #about-1 {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  #about-1 h1 {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #about-1 p {
+    text-align: center;
+    padding: 3px;
+    color: black;
+  }
+  
+  .about-item {
+    margin-bottom: 20px;
+    background-color: green;
+    padding: 80px 30px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.6);
+    text-align: center;
+  }
+  
+  .about-item i {
+    color: black;
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  .about-item h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .about-item hr {
+    width: 46px;
+    height: 3px;
+    background-color: rgb(186, 159, 61);
+    margin: 0 auto;
+    border: none;
+  }
+  
+  .about-item p {
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .about-item:hover {
+    background-color: rgb(186, 159, 61);
+  }
+  
+  .about-item:hover i,
+  .about-item:hover h3,
+  .about-item:hover p {
+    color: green;
+  }
+  
+  .about-item:hover hr {
+    background-color: green;
+  }
+  
+  .about-item:hover i {
+    transform: translateY(-20px);
+    transition: all 400ms ease-in-out;
+  }
+ 

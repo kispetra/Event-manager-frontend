@@ -1,0 +1,55 @@
+<div class="col-md-6 offset-md-3">
+  <h3> Prijava na događaj: </h3>
+  <form [formGroup]="registrationForm" (ngSubmit)="saveRegistration(registrationForm)">
+    
+    <div class="form-group">
+       <label for="name">Ime</label>
+       <input formControlName="name" class="form-control" id="name" placeholder="Ime" required>
+    </div>
+    <div class="form-group">
+      <label for="last">Prezime</label>
+      <input formControlName="last" class="form-control" id="last" placeholder="Prezime" required>
+     </div>
+   <div class="form-group">
+      <label for="email">Email</label>
+      <input formControlName="email" class="form-control" id="email" placeholder="Email" required>
+     </div>
+   <div class="form-group">
+      <label for="phone">Broj mobitela</label>
+      <input formControlName="phone" class="form-control" id="phone" placeholder="Broj" required>
+   </div>
+   <div class="form-group">
+      <label for="faculty">Fakultet</label>
+      <input formControlName="faculty" class="form-control" id="faculty" placeholder="faculty" required>
+   </div>
+   <div class="form-group">
+      <label for="year">Godina završenih</label>
+      <input formControlName="year" class="form-control" id="year" placeholder="year" required>
+   </div>
+   <div class="form-group">
+      <label for="summary">Zakljucak</label>
+      <input formControlName="summary" class="form-control" id="summary" placeholder="summary" required>
+   </div>
+   <div class="form-group">
+      <label for="years">Godine iskustva u Vašoj struci</label>
+      <input formControlName="years" class="form-control" id="years" placeholder="years" required>
+   </div>
+   <div *ngFor="let skill of skillTypes" class="skill-checkbox">
+      <input type="checkbox" id="{{ skill }}" name="skills" formControlName="skills" [value]="skill">
+      <label for="{{ skill }}">{{ skill }}</label>
+    </div>
+   <div class="form-group">
+      <label for="summary2">Ukratko opišite Vaša radna iskustva</label>
+      <input formControlName="summary2" class="form-control" id="summary2" placeholder="summary2" required>
+   </div>
+   <div class="form-group">
+      <label for="motivation">Motivacija</label>
+      <input formControlName="motivation" class="form-control" id="motivation" placeholder="motivation" required>
+   </div>
+    
+    <div class="modal-footer">
+       <button type="button" id="add-employee-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <button [disabled]="registrationForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+  </form>
+</div>

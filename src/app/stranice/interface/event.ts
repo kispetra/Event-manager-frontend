@@ -1,11 +1,10 @@
-import { Team } from './team';
+
 import { Registration } from './registration';
 
 export interface Event{
-    eventId: number | null;
-    name: String;
-    description: String;
-    teams: Array<Team>,
+    eventId: number,
+    name: String,
+    description: String,
     maxParticipants: number,
     registrationsNotBefore: Date,
     registrationsNotAfter: Date,

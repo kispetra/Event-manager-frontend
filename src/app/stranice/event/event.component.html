@@ -1,0 +1,20 @@
+
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="back-button me-md-4" routerLink="events" (click)="goBack()"><i class="bi bi-arrow-left-circle-fill"></i> Natrag</button>
+</div>
+<div class="event-details" *ngIf="event">    
+    <h2 class="event-title">{{ event.name }}</h2>
+    <p>{{ event.description }}</p>
+    <div class="event-info">
+      <p><strong>Broj sudionika: </strong> {{ event.maxParticipants }}</p>
+      <p><strong>Prijave od:</strong> {{ event.registrationsNotBefore | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotBefore | date:'HH:mm' }}h</p>
+      <p><strong>Prijave do:</strong> {{ event.registrationsNotAfter | date:'dd.MM.yyyy' }}. u {{ event.registrationsNotAfter | date:'HH:mm' }}h</p>
+      <p><strong>Rezultati:</strong> {{ event.confirmationNotAfter | date:'dd.MM.yyyy' }}. u {{ event.confirmationNotAfter | date:'HH:mm' }}h</p>
+      <p><strong>Početak:</strong> {{ event.startDate | date:'HH:mm'}}h</p>
+      <p><strong>Trajanje u tjednima: </strong> {{ event.weeks }}</p> 
+    </div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="back-button me-md-4" routerLink="events" (click)="goForward(event.eventId)"><i class="bi bi-arrow-left-circle-fill"></i> Prijavi se</button>
+</div>

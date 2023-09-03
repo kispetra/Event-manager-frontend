@@ -1,64 +1,73 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-.container{
-    background-color: rgb(188, 169, 100);
-   margin: auto;
-  width: 100%;
-  padding: 40px;
-}
-.about-1{
-    margin:10px;
+  }
+  
+  .container {
+    background-color: rgb(209, 197, 151);
+    margin: auto;
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .about-1 {
+    margin: 10px;
     padding: 20px;
-}
-.about-1 h1{
+  }
+  
+  .about-1 h1 {
     color: green;
     font-weight: bold;
-}
-.about-1 p{
+  }
+  
+  .about-1 p {
     text-align: center;
     padding: 3px;
     color: black;
-}
-
-.about-item{
+  }
+  
+  .about-item {
     margin-bottom: 20px;
     background-color: green;
     padding: 80px 30px;
-    box-shadow: 0 0 9px rgba(0,0,0,.6);
-}
-.about-item i{
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.6);
+    transition: all 400ms ease-in-out; /* Dodano prijelazno svojstvo za efekte hover-a */
+  }
+  
+  .about-item i {
     color: black;
     font-size: 30px;
     margin: 0;
-}
-.about-item h3{
+  }
+  
+  .about-item h3 {
     font-size: 25px;
     margin-bottom: 10px;
-}
-.about-item hr{
+  }
+  
+  .about-item hr {
     width: 46px;
     height: 3px;
     background-color: rgb(186, 159, 61);
     margin: 0 auto;
     border: none;
-}
-.about-item p{
+  }
+  
+  .about-item p {
     margin-top: 20px;
-}
-.about-item:hover{
+  }
+  
+  .about-item:hover {
     background-color: rgb(186, 159, 61);
-}
-.about-item:hover i, .about-item:hover h3, .about-item:hover p{
-    color: green;
-}
-.about-item:hover hr{
-    background-color: green;
-}
-.about-item:hover i{
-    transform: translateY(-20px);
-}
-.about-item:hover i, .about-item:hover h3, .about-item:hover hr{
-    transition: all 400ms ease-in-out;
-}
+    i, h3, p {
+      color: green;
+    }
+    hr {
+      background-color: green;
+    }
+    i {
+      transform: translateY(-20px);
+    }
+  }
+  
+  
