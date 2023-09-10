@@ -1,12 +1,12 @@
-<div>
+
+  <div>
     <app-buttons
       (loginEvent)="showComponent('login')"
-      (logoutEvent)="showComponent('home')"
+      (logoutEvent)="logout()"
     />
-        <app-home *ngIf="componentToShow == 'home'"/>
-      <app-login-form *ngIf="componentToShow == 'login'" 
-        (onSubmitLoginEvent)="onLogin($event)"  
-        (onSubmitRegisterEvent)="onRegister($event)"/>
-      <app-events *ngIf="componentToShow == 'events'"/>
+  
+    <app-home *ngIf="componentToShow == ''"/>
+    <app-login-form *ngIf="componentToShow == 'login'" (onSubmitLoginEvent)="onLogin($event)" (onSubmitRegisterEvent)="onRegister($event)"/>
+    <app-events *ngIf="componentToShow == 'events'"/>
   
   </div>

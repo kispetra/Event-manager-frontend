@@ -16,5 +16,5 @@
     </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="back-button me-md-4" routerLink="events" (click)="goForward(event.eventId)"><i class="bi bi-arrow-left-circle-fill"></i> Prijavi se</button>
+  <button class="back-button me-md-4" routerLink="events" (click)="goForward(event.eventId)" [disabled]="isRegistrationDisabled"><i class="bi bi-arrow-left-circle-fill"></i> Prijavi se</button>
 </div>

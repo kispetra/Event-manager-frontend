@@ -11,8 +11,6 @@ export interface Event{
     confirmationNotAfter: Date,
     startDate: Date,
     weeks: number,
-    invitesSent: boolean,
-    divided: boolean,
     registrations: Array<Registration>
     showDetails?: boolean;
 }

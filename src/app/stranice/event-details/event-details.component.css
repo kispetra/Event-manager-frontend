@@ -1,0 +1,111 @@
+.container {
+    padding: 15px;
+    background-color: #f2f2f2; 
+    border-radius: 10px; 
+    margin: 20px auto;
+    max-width: 1600px; 
+  }
+  
+  .event-heading {
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(0, 112, 0);
+  }
+  
+.green-button {
+    padding: 8px 16px;
+    background-color: #d0b661;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 10px; 
+  }
+  
+  .green-button:hover {
+    background-color: #1e5e0f;
+  }
+  .details-button {
+    background-color: #8ebc87; 
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s ease-in-out;
+  }
+  .details-button:hover {
+    background-color: #555; 
+  }
+  
+  button.green-button {
+    float: left; 
+    margin-top: 10px; 
+  }
+  button.top-right {
+    float: right; 
+    }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2; /* Svjetlo siva pozadina za zaglavlje */
+  }
+  
+  .table th:first-child,
+  .table td:first-child {
+    border-left: none; /* Bez lijevog ruba za prvu ćeliju */
+  }
+  
+  .table th:last-child,
+  .table td:last-child {
+    border-right: none; /* Bez desnog ruba za zadnju ćeliju */
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Svjetlo sivi red za neparni redak */
+  }
+  
+  /* Dodatni stil za poruku kada nema registracija */
+  .no-registrations {
+    font-style: italic;
+    margin: 10px 0;
+  }
+  
+  .no-registrations {
+    font-style: italic;
+    margin: 10px 0;
+  }
+  
+  .participants-container {
+    max-width: 1400px;
+    margin: 0 auto; /* Da bi se centrirali na širokim ekranima */
+    background-color: #f2f2f2; /* Svjetlo siva pozadina za sudionike */
+    padding: 15px; /* Dodatni padding za sudionike */
+    border-radius: 10px; /* Zaobljeni rubovi za sudionike */
+    margin-bottom: 10px;
+  }
+  
+  /* Stilizacija za popis sudionika */
+  .participants-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .participants-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .pull-right {
+    float: right;
+  }
+  

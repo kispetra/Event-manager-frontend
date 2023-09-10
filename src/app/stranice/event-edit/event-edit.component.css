@@ -1,0 +1,71 @@
+/* Stilizacija za formu uređivanja događaja */
+.container {
+    padding: 15px;
+    background-color: #f2f2f2; /* Svjetlo siva pozadina */
+    border-radius: 10px; /* Zaobljeni rubovi */
+    margin: 20px auto; /* Centralno pozicioniranje */
+    max-width: 1600px; /* Maksimalna širina kontejnera */
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(0, 112, 0);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button.btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.btn-primary {
+    background-color: #d0b661;
+    color: #000000;
+    border: none;
+}
+
+button.btn-primary:hover {
+    background-color: #1e5e0f;
+}
+
+button.btn-secondary {
+    background-color: #8ebc87; 
+    color: rgb(0, 0, 0);
+}
+
+button.btn-secondary:hover {
+    background-color: #555;
+}
+
+
+button.btn-secondary {
+    float: right; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}

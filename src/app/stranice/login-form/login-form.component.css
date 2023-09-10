@@ -1,0 +1,21 @@
+/* Dodatna stilizacija za zelene gumbe */
+.btn-success {
+    background-color: #1e5e0f; /* Zelena boja */
+    color: #fff; /* Bijela boja slova */
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #15500a; /* Tamnija nijansa zelene boje u hover stanju */
+}
+button.nav-link {
+    background-color: #f2f2f2; /* Postavite svijetlo sivu boju pozadine za oba taba */
+    color: #000; /* Postavite crnu boju teksta za oba taba */
+    border: 1px solid #ddd; /* Dodajte obrub (border) sivoj boji za oba taba */
+}
+
+button.nav-link.active {
+    background-color: #f2f2f2; /* Postavite istu svijetlo sivu boju pozadine za aktivan tab */
+    color: #000; /* Postavite istu crnu boju teksta za aktivan tab */
+    border: 1px solid #ddd; /* Dodajte isti obrub (border) sivoj boji za aktivan tab */
+}

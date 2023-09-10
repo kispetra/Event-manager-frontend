@@ -8,13 +8,17 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginFormComponent {
 
-  @Output() onSubmitLoginEvent = new EventEmitter();
-  @Output() onSubmitRegisterEvent = new EventEmitter();
+  @Output() onSubmitLoginEvent = new EventEmitter<{ login: string, password: string }>();
+  @Output() onSubmitRegisterEvent = new EventEmitter<any>();
 
 	active: string = "login";
   firstname: string = "";
   lastname: string = "";
-  username: string = "";
+  login: string = "";
+  address: string = "";
+  houseNumber: string = "";
+  country: string = "";
+  email: string = "";
   password: string = "";
 
 	onLoginTab(): void {
@@ -26,10 +30,12 @@ export class LoginFormComponent {
 	}
 
   onSubmitLogin(): void {
-    this.onSubmitLoginEvent.emit({"username": this.username, "password": this.password});
+    this.onSubmitLoginEvent.emit({"login": this.login, "password": this.password});
   }
 
   onSubmitRegister(): void {
-    this.onSubmitRegisterEvent.emit({"firstname": this.firstname, "lastname": this.lastname, "username": this.username, "password": this.password});
+    this.onSubmitRegisterEvent.emit({"firstname": this.firstname, "lastname": this.lastname,
+     "login": this.login, "address": this.address, "houseNumber": this.houseNumber,
+     "country": this.country, "email": this.email, "password": this.password});
   }
 }

@@ -1,0 +1,66 @@
+
+.container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  
+ 
+  h3 {
+    color: #000; 
+    max-width: 400px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0; 
+    border-radius: 5px;
+    background-color: #74b576; 
+  }
+  
+  /* Stil za ID */
+  #userid {
+    background-color: #4caf50; /* Zelena boja */
+    color: #000; /* Crna boja slova */
+    border-radius: 5px;
+    padding: 5px 10px; /* Dodajte razmak oko ID-a */
+    margin: 10px auto; /* Centrirajte ID */
+    display: inline-block;
+  }
+  
+  /* Stil za ostale tekstualne elemente */
+  p {
+    color: #000; /* Crna boja slova */
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Stil za gumb "Stvori događaj" */
+  button {
+    background-color: #68c56b; /* Zelena boja */
+    color: #000; /* Crna boja slova */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Tamnija zelena boja na hover */
+  }
+  
+  /* Stil za listu događaja */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }  

@@ -1,0 +1,10 @@
+/* Dodatna stilizacija za zelene gumbe */
+.btn-success {
+    background-color: #1e5e0f; /* Zelena boja */
+    color: #fff; /* Bijela boja slova */
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #15500a; /* Tamnija nijansa zelene boje u hover stanju */
+}

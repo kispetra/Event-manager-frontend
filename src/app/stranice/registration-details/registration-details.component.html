@@ -1,0 +1,78 @@
+<div *ngIf="registration">
+  <h3>Detalji registracije:</h3>
+  <div class="registration-details">
+      <div class="registration-detail">
+          <strong>Ime: </strong>
+          <span>{{ registration.personal.name.first }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Prezime: </strong>
+          <span>{{ registration.personal.name.last }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Email: </strong>
+          <span>{{ registration.personal.email }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Telefon: </strong>
+          <span>{{ registration.personal.phone }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Obrazovanje: </strong>
+          <span>{{ registration.personal.education.faculty }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Godina obrazovanja:</strong>
+          <span>{{ registration.personal.education.year }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Sažetak: </strong>
+          <span>{{ registration.personal.summary }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Godine iskustva: </strong>
+          <span>{{ registration.experience.years }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Vještine:</strong>
+          <ul>
+              <li *ngFor="let skill of registration.experience.skills">{{ skill }}</li>
+          </ul>
+      </div>
+      <div class="registration-detail">
+          <strong>Motivacija: </strong>
+          <span>{{ registration.motivation }}</span>
+      </div>
+      <div class="registration-detail">
+          <strong>Bodovi: </strong>
+          <span>{{ registration.score }}</span>
+      </div>
+      <div *ngIf="registration.comments && registration.comments.length > 0">
+        <h5>Komentari:</h5>
+        <ul>
+          <li *ngFor="let comment of registration.comments">
+            <strong>Ocjena: </strong> {{ comment.score }}
+            <br>
+            <strong>Komentar: </strong> {{ comment.comment }}
+          </li>
+        </ul>
+      </div>
+  
+      <div *ngIf="registration">
+        <div class="score-comment-container">
+            <div class="score-container">
+                <label for="score">Ocijenite registraciju: </label>
+                <input type="text" id="score" [(ngModel)]="scoreValue" name="score" required>
+            </div>
+            <br>
+            <div class="comment-container">
+                <label for="comment">Komentar: </label>
+                <textarea id="comment" [(ngModel)]="commentValue" name="comment" rows="4" required></textarea>
+            </div>
+            <br>
+            <button class="green-button" (click)="scoreRegistration()">Ocijeni</button>
+        </div>
+    </div>
+        <button class="green-button" (click)="deleteRegistration()">Obriši registraciju</button>
+      </div>
+</div>

@@ -1,0 +1,42 @@
+/* Dodajte ovaj CSS u vašu .css datoteku */
+/* Stil za glavni kontejner */
+.col-md-6.offset-md-3 {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Stil za naslov */
+h3 {
+  color: #4caf50;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Stil za unose */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Stil za gumbe */
+.btn-primary {
+  background-color: #4caf50; /* Zelena boja */
+  color: #000; /* Crna boja slova */
+}
+
+.btn-secondary {
+  background-color: #ccc; /* Siva boja */
+  color: #000; /* Crna boja slova */
+}
+
+/* Stil za checkboxove */
+.skill-checkbox label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Stil za modalni footer */
+.modal-footer {
+  text-align: right;
+}

@@ -1,0 +1,48 @@
+/* Stil za glavni kontejner */
+.login-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto; /* Dodano za centriranje */
+  }
+  
+  .login-container h2 {
+    color: #4caf50;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Stil za unose */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Postavite tekst na lijevo */
+  }
+  
+  .form-group label {
+    display: block; /* Prikazujemo imena iznad */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Stil za gumbe */
+  button {
+    background-color: #4caf50; /* Zelena boja */
+    color: #fff; /* Bijela boja slova */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Stil za gumbe na hover */
+  button:hover {
+    background-color: #45a049; /* Tamnozelena boja */
+  }
+  

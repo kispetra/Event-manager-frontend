@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Uredi događaj</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Naziv događaja:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="event.name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Opis:</label>
+        <textarea id="description" name="description" [(ngModel)]="event.description" class="form-control" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="maxParticipants">Maksimalni broj sudionika:</label>
+        <input type="number" id="maxParticipants" name="maxParticipants" [(ngModel)]="event.maxParticipants" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="registrationsNotBefore">Početak prijava:</label>
+        <input type="date"  id="registrationsNotBefore" name="registrationsNotBefore" [(ngModel)]="event.registrationsNotBefore" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="registrationsNotAfter">Završetak prijava:</label>
+        <input type="date"  id="registrationsNotAfter" name="registrationsNotAfter" [(ngModel)]="event.registrationsNotAfter" class="form-control" required>
+      </div>
+      <!-- Dodajte ostale atribute događaja koje želite urediti -->
+      <button type="submit" class="btn btn-primary">Spremi promjene</button>
+      <button (click)="goBack()" class="btn btn-secondary">Natrag</button>
+    </form>
+   
+  </div>
+  

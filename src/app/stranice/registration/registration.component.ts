@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RegistrationService } from '../service/registration.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { SkillType } from 'src/app/stranice/interface/enum/skillType.enum';
+import {  MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registration',
@@ -12,17 +13,29 @@ import { NgForm } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
-
+  
+  skills = [
+    { label: 'API', value: false },
+    { label: 'JAVA', value: false },
+    { label: 'Spring', value: false },
+    { label: 'SpringBoot', value: false },
+    { label: 'Hibernate', value: false },
+    { label: 'JPA', value: false },
+    { label: 'Scala', value: false }
+  ];
+  
   constructor(
     private fb: FormBuilder,
     private regService: RegistrationService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.initializeForm();
-  }
 
+  }
+  
   initializeForm(): void {
     this.registrationForm = this.fb.group({
       personal: this.fb.group({
@@ -40,16 +53,22 @@ export class RegistrationComponent implements OnInit {
       }),
       experience: this.fb.group({
         years: ['', Validators.required],
-        skills: this.fb.array([], Validators.required),
-        summary: ''
+        skills: this.fb.array([]), //TODO 
+        experienceSummary: ''
       }),
       motivation: ['', Validators.required]
     });
+    this.skills.forEach((skill) => {
+      const control = new FormControl(skill.value); // Inicijalno stanje vještine
+      (this.registrationForm.get('experience.skills') as FormArray).push(control);
+    });
+  }
+  
+  getControls(): FormControl[] {
+    return (this.registrationForm.get('experience.skills') as FormArray).controls as FormControl[];
   }
 
-  get skillTypes(): string[] {
-    return ['API', 'Java', 'Spring', 'Spring Boot', 'Hibernate', 'JPA'];
-  }
+
 
   public saveRegistration(registrationForm: FormGroup): void {
     this.route.paramMap.subscribe(params => {
@@ -57,15 +76,11 @@ export class RegistrationComponent implements OnInit {
       this.regService.saveRegistration(eventId, registrationForm.value).subscribe(
         (response: Object) => {
           console.log(response);
-        },
-        (error: HttpErrorResponse) => {
-          alert(error.message);
+          this.snackBar.open('Registracija je uspješno poslana.', 'Zatvori', {
+            duration: 5000, // Trajanje obavijesti u milisekundama
+          });
         }
       );
     });
   }
-
-
-
-
 }

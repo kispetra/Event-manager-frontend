@@ -1,0 +1,106 @@
+h3{
+    text-align: center; 
+}
+.eventbox {
+    padding: 15px;
+    background-color: rgb(140, 197, 120);
+}
+
+.eventbox h1 {
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    color: rgb(0, 112, 0);
+}
+
+.eventbox i {
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* Stilizacija .saznajButton */
+.saznajButton {
+    padding: 8px 16px;
+    background-color: #d0b661;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.saznajButton:hover {
+    background-color: #1e5e0f;
+}
+
+/* Stilizacija .title */
+.title {
+    color: rgb(128, 106, 27);
+    font-size: 22px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* Stilizacija .pagination */
+.pagination .page-item.active .page-link {
+    background-color: green;
+    color: white;
+    border-color: green;
+}
+
+.pagination .page-item.disabled .page-link {
+    pointer-events: none;
+    color: green;
+}
+
+/* Stilizacija registracije */
+.registration-details {
+    width: 60%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.registration-detail {
+    margin-bottom: 10px;
+}
+
+.registration-detail strong {
+    font-weight: bold;
+    color: rgb(0, 112, 0);
+}
+
+.comments-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.comment-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.score-comment-container {
+    margin-top: 20px;
+}
+
+
+/* Stilizacija buttona */
+.green-button {
+    background-color: #4CAF50;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button {
+    background-color: #FF0000;
+    margin-left: 10px;
+}

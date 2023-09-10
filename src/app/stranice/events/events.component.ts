@@ -7,6 +7,8 @@ import { Event }from '../interface/event';
 import { BehaviorSubject, Observable, catchError, map, of, startWith } from 'rxjs';
 import { apiResponse } from '../interface/ApiResponse';
 import { Page } from '../interface/Page';
+import { Router } from '@angular/router';
+import { AxiosService } from '../service/axios.service';
 
 @Component({
   selector: 'app-events',
@@ -21,9 +23,15 @@ export class EventsComponent implements OnInit{
   currentPage$ = this.currentPageSubject.asObservable()
 
   
-  constructor(private eventService: EventService) {}
+  constructor(private eventService: EventService, private axiosService: AxiosService, private router: Router) {}
 
   ngOnInit(): void {
+
+    if (!this.axiosService.isLoggedIn()) {
+      // Korisnik nije prijavljen, preusmjerite ga na prijavu
+      this.router.navigate(['/login']);
+    }
+
     this.eventState$ = this.eventService.events$().pipe(
       map((response: apiResponse<Page>) => {
 
@@ -37,6 +45,10 @@ export class EventsComponent implements OnInit{
         return of({ appState: 'APP_ERROR', error })}
         )
     )
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.axiosService.isLoggedIn();
   }
 
   goToPage(name?: string, pageNumber: number = 0): void {

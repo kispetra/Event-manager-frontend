@@ -1,0 +1,42 @@
+<div class="col-md-6 offset-md-3">
+  <h3> Stvori događaj: </h3>
+  <form [formGroup]="eventForm" (ngSubmit)="saveEvent(eventForm)">
+    <div class="form-group">
+      <label for="name">Naziv događaja</label>
+      <input formControlName="name" class="form-control" id="name" placeholder="Naziv događaja" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Opis događaja</label>
+      <textarea formControlName="description" class="form-control" id="description" placeholder="Opis događaja"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="maxParticipants">Maksimalan broj sudionika</label>
+      <input formControlName="maxParticipants" type="number" class="form-control" id="maxParticipants" placeholder="Maksimalan broj sudionika" required>
+    </div>
+    <div class="form-group">
+      <label for="registrationsNotBefore">Prijave počinju</label>
+      <input formControlName="registrationsNotBefore" type="date" class="form-control" id="registrationsNotBefore" required>
+    </div>
+    <div class="form-group">
+      <label for="registrationsNotAfter">Prijave završavaju</label>
+      <input formControlName="registrationsNotAfter" type="date" class="form-control" id="registrationsNotAfter" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmationNotAfter">Potvrde o upisu na događaj</label>
+      <input formControlName="confirmationNotAfter" type="date" class="form-control" id="confirmationNotAfter" required>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Datum početka događaja</label>
+      <input formControlName="startDate" type="date" class="form-control" id="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="weeks">Broj tjedana</label>
+      <input formControlName="weeks" type="number" class="form-control" id="weeks" placeholder="Broj tjedana" required>
+    </div>
+    <!-- Ovdje možete dodati HTML za unos registracija, ako je potrebno -->
+    <div class="modal-footer">
+      <button type="button" id="add-event-form" class="btn btn-secondary" data-dismiss="modal" (click)="goBack()">Zatvori</button>
+      <button [disabled]="eventForm.invalid" type="submit" class="btn btn-primary btn-green">Spremi promjene</button>
+    </div>
+  </form>
+</div>
